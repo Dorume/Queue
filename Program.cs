@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Queue
 {
@@ -41,21 +38,21 @@ namespace Queue
 
         static void Pop()
         {
-            if (!queue.IsEmpty())
+            if (queue.IsEmpty())
+                PrintError();
+            else
             {
                 Console.WriteLine(queue.Pop());
             }
-            else 
-                PrintError();
 
         }
 
         static void Front()
         {
-            if (!queue.IsEmpty())
-                Console.WriteLine(queue.Front());
-            else
+            if (queue.IsEmpty())
                 PrintError();
+            else
+                Console.WriteLine(queue.Front());
         }
 
         static void Clear()
